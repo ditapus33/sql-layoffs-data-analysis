@@ -1,13 +1,13 @@
 -- Data Cleaning
 
+-- ==========================================
+-- 0. CEK DATA AWAL
 SELECT *
 FROM layoffs;
 
--- 1. Remove Duplicats
--- 2. Standarized the Data
--- 3. Null Values or blank values
--- 4. Remove Any Columns or Row
 
+-- ==========================================
+-- 1. COPY DATA KE STAGING
 CREATE TABLE layoffs_staging
 LIKE layoffs;
 
@@ -18,6 +18,12 @@ INSERT layoffs_staging
 SELECT *
 FROM layoffs;
 
+SELECT COUNT(*) FROM layoffs_staging; -- cek jumlah baris
+
+-- ==========================================
+-- 2. CEK DAN HAPUS DUPLIKAT
+
+-- Cek duplikat
 SELECT *,
 ROW_NUMBER() OVER(
 PARTITION BY company, industry, total_laid_off, percentage_laid_off, "date") AS row_num
@@ -35,24 +41,12 @@ SELECT *
 FROM duplicate_cte
 WHERE row_num > 1;
 
--- CEK
+-- Cek kembali
 SELECT *
 FROM layoffs_staging
 WHERE company = "Casper";
--- 
 
-WITH duplicate_cte AS
-(
-SELECT *,
-ROW_NUMBER() OVER(
-PARTITION BY company, location,industry, total_laid_off, percentage_laid_off, "date", 
-stage, country, funds_raised_millions) AS row_num
-FROM layoffs_staging
-)
-DELETE
-FROM duplicate_cte
-WHERE row_num > 1;
-
+-- Buat staging 2 untuk menghapus duplikat
 CREATE TABLE `layoffs_staging2` (
   `company` text,
   `location` text,
@@ -73,12 +67,12 @@ WHERE row_num > 1;
 INSERT INTO layoffs_staging2
 SELECT *,
 ROW_NUMBER() OVER(
-PARTITION BY company, location,industry, total_laid_off, percentage_laid_off, "date", 
+PARTITION BY company, location, industry, total_laid_off, percentage_laid_off, "date", 
 stage, country, funds_raised_millions) AS row_num
 FROM layoffs_staging;
 
+-- Hapus duplikat
 SET SQL_SAFE_UPDATES = 0;
-
 DELETE
 FROM layoffs_staging2
 WHERE row_num > 1;
@@ -87,8 +81,10 @@ SELECT *
 FROM layoffs_staging2
 WHERE row_num = 1;
 
--- Standardizing Data
+-- ==========================================
+-- 3. STANDARDISASI DATA
 
+-- 3.1 Trim spasi pada company
 SELECT company, TRIM(company)
 FROM layoffs_staging2;
 
@@ -98,15 +94,16 @@ SET company = TRIM(company);
 SELECT DISTINCT industry
 FROM layoffs_staging2;
 
+-- 3.2 Samakan penamaan industry (contoh: Crypto)
 SELECT *
 FROM layoffs_staging2
 WHERE industry LIKE 'Crypto%';
 
 UPDATE layoffs_staging2
 SET industry = 'Crypto'
-WHERE industry like 'Crypto%';
+WHERE industry LIKE 'Crypto%';
 
-
+-- 3.3 Samakan nama negara (contoh: United States vs United States.)
 SELECT DISTINCT country
 FROM layoffs_staging2
 ORDER BY 1;
@@ -122,6 +119,7 @@ WHERE country LIKE 'United States%';
 SELECT *
 FROM layoffs_staging2;
 
+-- 3.4 Ubah format date menjadi DATE
 SELECT `date`
 FROM layoffs_staging2;
 
@@ -131,6 +129,10 @@ SET `date` = STR_TO_DATE(`date`, '%m/%d/%Y');
 ALTER TABLE layoffs_staging2
 MODIFY COLUMN `date` DATE;
 
+-- ==========================================
+-- 4. HANDLE NULL VALUES
+
+-- 4.1 Set industry kosong menjadi NULL
 SELECT *
 FROM layoffs_staging2
 WHERE total_laid_off IS NULL
@@ -140,6 +142,7 @@ UPDATE layoffs_staging2
 SET industry = NULL
 WHERE industry = '';
 
+-- 4.2 Isi industry yang NULL dari company lain
 SELECT *
 FROM layoffs_staging2
 WHERE industry IS NULL
@@ -164,6 +167,7 @@ SET t1.industry = t2.industry
 WHERE (t1.industry IS NULL)
 AND t2.industry IS NOT NULL;
 
+-- 4.3 Hapus baris yang benar-benar kosong (tidak ada total dan percentage laid off)
 SELECT *
 FROM layoffs_staging2
 WHERE total_laid_off IS NULL
@@ -174,8 +178,15 @@ FROM layoffs_staging2
 WHERE total_laid_off IS NULL
 AND percentage_laid_off IS NULL;
 
+-- ==========================================
+-- 5. CLEAN UP TABLE
 SELECT *
 FROM layoffs_staging2;
 
 ALTER TABLE layoffs_staging2
 DROP COLUMN row_num;
+
+-- ==========================================
+-- 6. CEK HASIL AKHIR
+SELECT * FROM layoffs_staging2;
+SELECT COUNT(*) FROM layoffs_staging2;

@@ -32,8 +32,7 @@ This project demonstrates skills in:
 
 Total layoffs aggregated per year and per month.
 
-![Total Layoffs]("screenshots/Total Layoffs.png")
-
+![Total Layoffs](screenshots/Total%20Layoffs.png)
 
 **2. Layoffs by Industry**
 

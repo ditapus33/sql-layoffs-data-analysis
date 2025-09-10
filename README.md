@@ -1,2 +1,8 @@
-# sql-layoffs-data-analysis
-SQL project for cleaning and analyzing layoffs dataset. Includes handling duplicates, null values, and standardizing data. After the data cleaning process, I also performed several exploratory data analyses (EDA) to gain insights. The analysis covered maximum layoffs recorded, companies with 100% layoffs, total layoffs by company, industry, and country, as well as time-based analysis including layoffs by year, month, and cumulative (rolling) totals. I also explored layoffs by company stage to identify which stages experienced the most significant cuts. Furthermore, I applied window functions such as DENSE_RANK() to highlight the top companies with the highest number of layoffs in each year. This project demonstrates skills in SQL data cleaning, aggregation, time-series analysis, and advanced queries with CTEs and window functions.
+**SQL Layoffs Data Analysis**
+
+SQL project for data cleaning and exploratory data analysis (EDA) of a global layoffs dataset.
+This project demonstrates skills in:
+* Handling duplicates, null values, and inconsistent formatting
+* Exploratory Data Analysis (EDA) using SQL
+* Time-series analysis with rolling totals
+* Advanced queries with window functions

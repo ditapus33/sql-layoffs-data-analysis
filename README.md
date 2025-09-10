@@ -29,18 +29,26 @@ This project demonstrates skills in:
 **📊 Exploratory Data Analysis (EDA)**
 
 **1. Layoffs Over Time**
+
 Total layoffs aggregated per year and per month.
 
+![Deskripsi gambar](screenshots/Total Layoffs.png)
+
+
 **2. Layoffs by Industry**
+
 Identifying which industries were most impacted.
 
 **3. Layoffs by Country**
+
 Distribution of layoffs across countries.
 
 **4. Layoffs by Company Stage**
+
 Comparison of layoffs across funding stages (Startup, Series A, Series B, etc.).
 
 **5. Top 5 Companies per Year**
+
 Using DENSE_RANK() to identify companies with the highest layoffs each year.
 
 ---

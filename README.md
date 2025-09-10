@@ -1,5 +1,7 @@
 **SQL Layoffs Data Analysis**
+
 SQL project for data cleaning and exploratory data analysis (EDA) of a global layoffs dataset.
+
 This project demonstrates skills in:
 * Handling duplicates, null values, and inconsistent formatting
 * Exploratory Data Analysis (EDA) using SQL
@@ -25,6 +27,7 @@ This project demonstrates skills in:
 ---
 
 **📊 Exploratory Data Analysis (EDA)**
+
 **1. Layoffs Over Time**
 Total layoffs aggregated per year and per month.
 
@@ -58,16 +61,20 @@ Using DENSE_RANK() to identify companies with the highest layoffs each year.
 
 **▶️ Usage**
 1. Clone this repository to your local machine:
+   ```bash
    git clone https://github.com/username/layoffs-sql-analysis.git
+   
    cd layoffs-sql-analysis
 
 2. Import the **layoffs dataset** (layoffs.csv) into MySQL.
 
 3. Run the **data cleaning script**:
+   ```sql
    SOURCE layoffs_cleaning.sql;
 
 4. Run the **exploratory data analysis (EDA) script**:
+   ```sql
    SOURCE eda_layoffs.sql;
 
-5. Explore the query outputs in **MySQL Workbench** or the **command-line client**. 
+5. Explore the query outputs in **MySQL Workbench** or the **command-line client**.
 

@@ -56,8 +56,18 @@ Using DENSE_RANK() to identify companies with the highest layoffs each year.
 
 ---
 
-**📌 Next Steps**
-* Enhance analysis with visualization tools (Tableau, Power BI, or Python/Matplotlib).
-* Add predictive modeling for layoffs trends.
+**▶️ Usage**
+1. Clone this repository to your local machine:
+   git clone https://github.com/username/layoffs-sql-analysis.git
+   cd layoffs-sql-analysis
 
-  
+2. Import the **layoffs dataset** (layoffs.csv) into MySQL.
+
+3. Run the **data cleaning script**:
+   SOURCE layoffs_cleaning.sql;
+
+4. Run the **exploratory data analysis (EDA) script**:
+   SOURCE eda_layoffs.sql;
+
+5. Explore the query outputs in **MySQL Workbench** or the **command-line client**. 
+

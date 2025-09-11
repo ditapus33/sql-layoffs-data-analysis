@@ -56,10 +56,18 @@ Using DENSE_RANK() to identify companies with the highest layoffs each year.
 ---
 
 **📈 Key Insights**
-* The peak of layoffs occurred in **[year X]**, with over **[N layoffs]**.
-* **[Industry Y]** was the most affected, followed by **[Industry Z]**.
-* **[Country A]** accounted for the highest layoffs globally.
-* Companies at the **[Stage]** funding stage were disproportionately impacted.
+* The peak of layoffs occurred in **January 2023**, with a total off **84.714**.
+* **Consumer** was the most affected, followed by **Retail**.
+* **United States** accounted for the highest layoffs globally.
+* Top 5 Companies with Most Layoffs per Year
+
+  **2020: Uber, Booking.com, Airbnb, Groupon, Swiggy**
+
+  **2021: Bytedance, Katerra, Zillow, Instacart, WhiteHat Jr**
+  
+  **2022: Meta, Amazon, Cisco, Peloton, Carvana and Philips**
+
+**2023: Google, Microsoft, Ericsson, Amazon and Salesforce, Dell**
 
 ---
 

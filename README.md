@@ -67,7 +67,7 @@ Using DENSE_RANK() to identify companies with the highest layoffs each year.
   
   **2022: Meta, Amazon, Cisco, Peloton, Carvana and Philips**
 
-**2023: Google, Microsoft, Ericsson, Amazon and Salesforce, Dell**
+  **2023: Google, Microsoft, Ericsson, Amazon and Salesforce, Dell**
 
 ---
 

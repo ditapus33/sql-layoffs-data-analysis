@@ -39,17 +39,19 @@ Total layoffs aggregated per year and per month.
 
 Identifying which industries were most impacted.
 
+<img src="screenshots/Layoffs%20by%20Industry.png" alt="Layoffs by Industry" width="500"/>
+
 **3. Layoffs by Country**
 
 Distribution of layoffs across countries.
 
-**4. Layoffs by Company Stage**
+<img src="screenshots/Layoffs%20by%20Country.png" alt="Layoffs by Country" width="500"/>
 
-Comparison of layoffs across funding stages (Startup, Series A, Series B, etc.).
-
-**5. Top 5 Companies per Year**
+**4. Top 5 Companies per Year**
 
 Using DENSE_RANK() to identify companies with the highest layoffs each year.
+
+<img src="screenshots/Top%205%20Companies.png" alt="Top 5 Companies" width="500"/>
 
 ---
 

@@ -1,3 +1,30 @@
+**Schema**
+```bash
+├── layoffs.csv                     # (1) Raw dataset — the main source of data
+│
+├── layoffs_cleaning.sql            # (2) Data cleaning script — cleans the raw dataset
+├── eda_layoffs.sql                 # (3) EDA script — explores and analyzes the cleaned data
+│
+├── analysis_results_data/          # (4) Exported analysis results — cleaned & processed data for visualization
+│   ├── layoff country.csv
+|   ├── layoff industri.csv
+|   ├── top 5 companies.csv
+|   └── total per month.csv
+|
+│
+├── screenshots/                    # (5) Visual outputs — charts and plots created from the analysis results
+│   ├── Layoffs by Country.png
+|   ├── Layoffs by Industry.png
+|   ├── Top 5 Companies.png
+|   ├── Total Layoffs.png
+|   ├── after cleaning.png
+|   ├── before cleaning.png
+│   └── chart2.png
+│
+└── README.md                        # Project documentation
+
+---
+
 **SQL Layoffs Data Analysis**
 
 SQL project for data cleaning and exploratory data analysis (EDA) of a global layoffs dataset.

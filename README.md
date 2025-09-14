@@ -1,4 +1,4 @@
-**Schema**
+**🗂️Schema**
 
 ```bash
 ├── layoffs.csv                     # (1) Raw dataset — the main source of data
@@ -27,7 +27,7 @@
 
 ---
 
-**SQL Layoffs Data Analysis**
+**📌SQL Layoffs Data Analysis**
 
 SQL project for data cleaning and exploratory data analysis (EDA) of a global layoffs dataset.
 
@@ -112,16 +112,19 @@ Using DENSE_RANK() to identify companies with the highest layoffs each year.
    git clone https://github.com/username/layoffs-sql-analysis.git
    
    cd layoffs-sql-analysis
+   ```
 
 2. Import the **layoffs dataset** (layoffs.csv) into MySQL.
 
 3. Run the **data cleaning script**:
    ```sql
    SOURCE layoffs_cleaning.sql;
+   ```
 
 4. Run the **exploratory data analysis (EDA) script**:
    ```sql
    SOURCE eda_layoffs.sql;
+   ```
 
 5. Explore the query outputs in **MySQL Workbench** or the **command-line client**.
 

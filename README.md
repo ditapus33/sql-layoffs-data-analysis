@@ -1,4 +1,5 @@
 **Schema**
+
 ```bash
 ├── layoffs.csv                     # (1) Raw dataset — the main source of data
 │
@@ -22,6 +23,7 @@
 │   └── chart2.png
 │
 └── README.md                        # Project documentation
+```
 
 ---
 

@@ -27,7 +27,7 @@
 
 ---
 
-**📌SQL Layoffs Data Analysis**
+# 📌SQL Layoffs Data Analysis
 
 SQL project for data cleaning and exploratory data analysis (EDA) of a global layoffs dataset.
 
@@ -39,7 +39,7 @@ This project demonstrates skills in:
 
 ---
 
-**📂 Project Structure**
+## 📂 Project Structure
 * layoffs_cleaning.sql → Script for cleaning raw layoffs dataset
 * eda_layoffs.sql → Exploratory Data Analysis queries
 * screenshots/ → Folder containing charts and query outputs
@@ -47,7 +47,7 @@ This project demonstrates skills in:
 
 ---
 
-**🛠️ Data Cleaning Steps**
+## 🛠️ Data Cleaning Steps
 * Remove duplicates
 * Handle NULL and blank values
 * Standardize formats (company, industry, country)
@@ -55,7 +55,7 @@ This project demonstrates skills in:
 
 ---
 
-**📊 Exploratory Data Analysis (EDA)**
+## 📊 Exploratory Data Analysis (EDA)
 
 **1. Layoffs Over Time**
 
@@ -84,7 +84,7 @@ Using DENSE_RANK() to identify companies with the highest layoffs each year.
 
 ---
 
-**📈 Key Insights**
+## 📈 Key Insights
 * The peak of layoffs occurred in **January 2023**, with a total off **84.714**.
 * **Consumer** was the most affected, followed by **Retail**.
 * **United States** accounted for the highest layoffs globally.
@@ -100,13 +100,13 @@ Using DENSE_RANK() to identify companies with the highest layoffs each year.
 
 ---
 
-**🚀 Tech Stack**
+## 🚀 Tech Stack
 * **SQL** (MySQL) for data cleaning and EDA
 * **GitHub** for version control and portfolio presentation
 
 ---
 
-**▶️ Usage**
+## ▶️ Usage
 1. Clone this repository to your local machine:
    ```bash
    git clone https://github.com/username/layoffs-sql-analysis.git
